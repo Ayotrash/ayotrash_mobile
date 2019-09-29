@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import './check_location_view_model.dart';
 
 class CheckLocationView extends CheckLocationViewModel {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarColor: Color(0xFFFAFAFA),
+        statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarColor: Color(0xFFFAFAFA),
+        systemNavigationBarIconBrightness: Brightness.dark));
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -32,7 +38,7 @@ class CheckLocationView extends CheckLocationViewModel {
                 // splashColor: Color(0xFF1e90ff),
                 borderSide: BorderSide(color: Color(0xFF1e90ff)),
                 textColor: Color(0xFF1e90ff),
-                onPressed: () {},
+                onPressed: () => Navigator.pushNamed(context, "/AutoLocation"),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -42,7 +48,7 @@ class CheckLocationView extends CheckLocationViewModel {
                     ),
                     SizedBox(width: 10),
                     Text(
-                      "Kita cek lokasi kamu dulu ya",
+                      "Cek Lokasi Otomatis",
                       style:
                           TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
                     ),
@@ -62,7 +68,7 @@ class CheckLocationView extends CheckLocationViewModel {
                 padding: EdgeInsets.symmetric(vertical: 15),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),
-                onPressed: () {},
+                onPressed: () => checkManually(),
                 textColor: Color(0xFF1e90ff),
                 child: Text(
                   "Tambahkan lokasi secara manual",
