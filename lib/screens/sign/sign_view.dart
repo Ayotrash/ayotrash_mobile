@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import './sign_view_model.dart';
 
 class SignView extends SignViewModel {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarColor: Color(0xFFFAFAFA),
+        statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarColor: Color(0xFFFAFAFA),
+        systemNavigationBarIconBrightness: Brightness.dark));
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
@@ -77,7 +83,7 @@ class SignView extends SignViewModel {
                   padding: EdgeInsets.symmetric(vertical: 15),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  onPressed: () {},
+                  onPressed: () => Navigator.pushNamed(context, "/Home"),
                   textColor: Color(0xFF2ed573),
                   child: Text(
                     "Sudah punya akun",
