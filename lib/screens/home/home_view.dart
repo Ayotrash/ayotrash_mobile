@@ -62,7 +62,7 @@ class HomeView extends HomeViewModel {
                       ),
                       SizedBox(width: 5),
                       Text(
-                        "20 point",
+                        "20 points",
                         style: TextStyle(
                           fontWeight: FontWeight.w900,
                           fontSize: 18,
@@ -258,17 +258,13 @@ class HomeView extends HomeViewModel {
               ),
               Padding(
                 padding:
-                    EdgeInsets.only(top: 20, left: 15, right: 25, bottom: 18),
-                child: Row(
-                  children: <Widget>[
-                    Text(
-                      "Blog & Feeds",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ],
+                    EdgeInsets.only(top: 30, left: 15, right: 25, bottom: 12),
+                child: Text(
+                  "Blog & Feeds",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 20,
+                  ),
                 ),
               ),
               Container(

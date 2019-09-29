@@ -108,7 +108,7 @@ class ProfileView extends ProfileViewModel {
                 ),
                 SizedBox(width: 5),
                 Text(
-                  "20 point",
+                  "20 points",
                   style: TextStyle(
                     fontWeight: FontWeight.w900,
                     fontSize: 20,
@@ -288,8 +288,8 @@ class ProfileView extends ProfileViewModel {
                                     borderSide:
                                         BorderSide(color: Color(0xFF5352ed)),
                                     textColor: Color(0xFF5352ed),
-                                    onPressed: () => Navigator.pushNamed(
-                                        context, "/Report"),
+                                    onPressed: () =>
+                                        Navigator.pushNamed(context, "/Report"),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
