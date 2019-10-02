@@ -102,25 +102,6 @@ class SignView extends SignViewModel {
                       ),
                     ),
                   ),
-                  Container(
-                    width: screenSize.width - 100,
-                    child: RaisedButton(
-                      padding: EdgeInsets.symmetric(vertical: 15),
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)),
-                      onPressed: () => Navigator.pushNamed(context, "/Home"),
-                      color: Color(0xFFff4757),
-                      textColor: Colors.white,
-                      child: Text(
-                        "Access to Home",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),
@@ -242,7 +223,7 @@ class SignView extends SignViewModel {
                             elevation: 0,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(25)),
-                            onPressed: () => signInRegular(),
+                            onPressed: () => Navigator.pushNamed(context, "/Home"),
                             color: emailController.text.length > 0 &&
                                     passwordController.text.length > 0
                                 ? Color(0xFF2ed573)

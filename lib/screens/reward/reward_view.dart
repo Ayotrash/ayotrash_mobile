@@ -183,7 +183,7 @@ class RewardView extends RewardViewModel {
               ),
             ),
             Container(
-                height: 300,
+                height: 310,
                 child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[

@@ -353,7 +353,8 @@ class FillAccountView extends FillAccountViewModel {
                 elevation: 0,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),
-                onPressed: () => Navigator.pushNamed(context, "/CheckLocation"),
+                onPressed: () =>
+                    Navigator.pushReplacementNamed(context, "/Home"),
                 color: Color(0xFF2ed573),
                 textColor: Colors.white,
                 child: Text(

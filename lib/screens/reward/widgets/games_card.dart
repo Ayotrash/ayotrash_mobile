@@ -11,7 +11,7 @@ class GamesCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
+      width: 310,
       margin: EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 10),
       decoration: BoxDecoration(
         // color: Colors.white,
@@ -29,7 +29,7 @@ class GamesCard extends StatelessWidget {
               CachedNetworkImage(
                 imageUrl: "$image",
                 imageBuilder: (context, imageProvider) => Container(
-                  width: 300,
+                  width: 310,
                   height: 180,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -53,7 +53,7 @@ class GamesCard extends StatelessWidget {
                   )),
                 ),
                 placeholder: (context, url) => Container(
-                  width: 300,
+                  width: 310,
                   height: 180,
                   margin:
                       EdgeInsets.only(left: 15, right: 15, top: 20, bottom: 10),

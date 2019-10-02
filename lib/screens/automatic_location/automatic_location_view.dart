@@ -232,8 +232,8 @@ class AutomaticLocationView extends AutomaticLocationViewModel {
                               elevation: 0,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10)),
-                              onPressed: () => Navigator.pushNamed(
-                                  context, "/CheckLocation"),
+                              onPressed: () => Navigator.pushReplacementNamed(
+                                  context, "/FillAccount"),
                               color: Color(0xFF2ed573),
                               textColor: Colors.white,
                               child: Text(
