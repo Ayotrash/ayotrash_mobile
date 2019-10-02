@@ -48,7 +48,7 @@ abstract class FillAccountViewModel extends State<FillAccount> {
         "tags": androidInfo.tags,
         "type": androidInfo.type,
         "isPhysicalDevice": androidInfo.isPhysicalDevice,
-        "isPhysicalDevice": androidInfo.androidId,
+        "deviceId": androidInfo.androidId,
       };
     });
   }

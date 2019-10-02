@@ -1,3 +1,4 @@
+import 'package:ayotrash/localization/app_translations.dart';
 import 'package:ayotrash/screens/report/widgets/showImage.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -65,7 +66,7 @@ class ReportList extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("$date - Diambil pada jam $time",
+                        Text("$date - ${AppTranslations.of(context).text("mini_report_time")} $time",
                             style: TextStyle(color: Colors.grey, fontSize: 13)),
                         SizedBox(height: 5),
                         Row(
@@ -98,7 +99,7 @@ class ReportList extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: <Widget>[
-                                      Text("Petugas",
+                                      Text("${AppTranslations.of(context).text("officer")}",
                                           style: TextStyle(
                                               color: Color(0xFF57606f),
                                               fontSize: 13)),
@@ -127,7 +128,7 @@ class ReportList extends StatelessWidget {
                               ),
                               textColor: Color(0xFF1e90ff),
                               child: Text(
-                                "Lihat Foto Laporan",
+                                "${AppTranslations.of(context).text("btn_view_photo")}",
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 13,

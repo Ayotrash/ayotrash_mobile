@@ -1,3 +1,4 @@
+import 'package:ayotrash/localization/app_translations.dart';
 import 'package:flutter/material.dart';
 
 class InvitationCard extends StatefulWidget {
@@ -54,7 +55,7 @@ class _InvitationCardState extends State<InvitationCard> {
                             children: <Widget>[
                               RichText(
                                 text: new TextSpan(
-                                  text: 'Undang teman pakai',
+                                  text: '${AppTranslations.of(context).text("invite_title")}',
                                   style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w500,
@@ -73,12 +74,12 @@ class _InvitationCardState extends State<InvitationCard> {
                               RichText(
                                 text: new TextSpan(
                                   text:
-                                      'Gratis angkut sampah selama 1 minggu dan dapatkan',
+                                      '${AppTranslations.of(context).text("invite_subtitle")}',
                                   style: TextStyle(
                                       fontSize: 15, color: Color(0xFF2f3542)),
                                   children: [
                                     new TextSpan(
-                                        text: ' 20 point',
+                                        text: ' 20 ${AppTranslations.of(context).text("point")}',
                                         style: new TextStyle(
                                             fontWeight: FontWeight.w900,
                                             color: Color(0xFFFE9923))),
@@ -110,7 +111,7 @@ class _InvitationCardState extends State<InvitationCard> {
               color: Color(0xFF2ed573),
               textColor: Colors.white,
               child: Text(
-                "Undang Teman",
+                "${AppTranslations.of(context).text("btn_invite")}",
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 16,

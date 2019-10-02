@@ -1,3 +1,4 @@
+import 'package:ayotrash/localization/app_translations.dart';
 import 'package:ayotrash/screens/report/widgets/report_list.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,7 @@ class ReportView extends ReportViewModel {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            "Semua Laporan",
+                            "${AppTranslations.of(context).text("title_report")}",
                             style: TextStyle(
                                 fontWeight: FontWeight.w900,
                                 fontSize: 20,
@@ -115,7 +116,7 @@ class ReportView extends ReportViewModel {
                               Icon(Icons.today, size: 20),
                               SizedBox(width: 5),
                               Text(
-                                "Cari berdasarkan tanggal",
+                                "${AppTranslations.of(context).text("btn_find_report")}",
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 16,
@@ -151,7 +152,7 @@ class ReportView extends ReportViewModel {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            "Hari ini ($formattedDate)",
+                            "${AppTranslations.of(context).text("today")} ($formattedDate)",
                             style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w700,
@@ -162,14 +163,14 @@ class ReportView extends ReportViewModel {
                           ),
                           !trashTaken
                               ? Text(
-                                  "Sampah hari ini belum diambil.",
+                                  "${AppTranslations.of(context).text("trash_not_taken")}.",
                                   style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500,
                                       color: Color(0xFF2f3542)),
                                 )
                               : Text(
-                                  "Sampah sudah diambil pada jam 08:19",
+                                  "${AppTranslations.of(context).text("tash_taken")} 08:19",
                                   style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500,
@@ -258,7 +259,7 @@ class ReportView extends ReportViewModel {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text("Petugas",
+                                Text("${AppTranslations.of(context).text("officer")}",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 13)),
                                 Text("Azerino Gatots",

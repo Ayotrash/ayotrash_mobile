@@ -1,3 +1,4 @@
+import 'package:ayotrash/localization/app_translations.dart';
 import 'package:ayotrash/screens/home/widgets/invitation_card.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class _ReportCardState extends State<ReportCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      "Hari ini ($formattedDate)",
+                      "${AppTranslations.of(context).text("today")} ($formattedDate)",
                       style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w700,
@@ -51,14 +52,14 @@ class _ReportCardState extends State<ReportCard> {
                     ),
                     !widget.trashTaken
                         ? Text(
-                            "Sampah hari ini belum diambil.",
+                            "${AppTranslations.of(context).text("trash_not_taken")}.",
                             style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
                                 color: Color(0xFF2f3542)),
                           )
                         : Text(
-                            "Sampah sudah diambil pada jam 08:19",
+                            "${AppTranslations.of(context).text("trash_taken")} 08:19",
                             style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -73,50 +74,52 @@ class _ReportCardState extends State<ReportCard> {
         Container(
           child: Stack(
             children: <Widget>[
-              CachedNetworkImage(
-                imageUrl:
-                    "https://arcadiadesignarc.com/wp-content/uploads/2018/10/Keren-Desain-Rumah-Minimalis-Masa-Kini-63-Dalam-Rumah-Merancang-Inspirasi-untuk-Desain-Rumah-Minimalis-Masa-Kini-.jpg",
-                imageBuilder: (context, imageProvider) => Container(
-                  width: screenSize.width,
-                  height: 180,
-                  margin:
-                      EdgeInsets.only(left: 15, right: 15, top: 20, bottom: 10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                          image: imageProvider, fit: BoxFit.cover)),
-                  child: Container(
-                      decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    gradient: LinearGradient(
-                      // Where the linear gradient begins and ends
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      // Add one stop for each color. Stops should increase from 0 to 1
-                      stops: [0.1, 2.1],
-                      colors: [
-                        // Colors are easy thanks to Flutter's Colors class.
-                        Colors.grey[800],
-                        Colors.transparent,
-                      ],
-                    ),
-                  )),
-                ),
-                placeholder: (context, url) => Container(
-                  width: screenSize.width,
-                  height: 180,
-                  margin:
-                      EdgeInsets.only(left: 15, right: 15, top: 20, bottom: 10),
-                  child: Center(
-                    child: SizedBox(
-                      height: 50,
-                      width: 50,
-                      child: CircularProgressIndicator(),
-                    ),
-                  ),
-                ),
-                errorWidget: (context, url, error) => Icon(Icons.error),
-              ),
+              widget.trashTaken
+                  ? CachedNetworkImage(
+                      imageUrl:
+                          "https://arcadiadesignarc.com/wp-content/uploads/2018/10/Keren-Desain-Rumah-Minimalis-Masa-Kini-63-Dalam-Rumah-Merancang-Inspirasi-untuk-Desain-Rumah-Minimalis-Masa-Kini-.jpg",
+                      imageBuilder: (context, imageProvider) => Container(
+                        width: screenSize.width,
+                        height: 180,
+                        margin: EdgeInsets.only(
+                            left: 15, right: 15, top: 20, bottom: 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                                image: imageProvider, fit: BoxFit.cover)),
+                        child: Container(
+                            decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          gradient: LinearGradient(
+                            // Where the linear gradient begins and ends
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            // Add one stop for each color. Stops should increase from 0 to 1
+                            stops: [0.1, 2.1],
+                            colors: [
+                              // Colors are easy thanks to Flutter's Colors class.
+                              Colors.grey[800],
+                              Colors.transparent,
+                            ],
+                          ),
+                        )),
+                      ),
+                      placeholder: (context, url) => Container(
+                        width: screenSize.width,
+                        height: 180,
+                        margin: EdgeInsets.only(
+                            left: 15, right: 15, top: 20, bottom: 10),
+                        child: Center(
+                          child: SizedBox(
+                            height: 50,
+                            width: 50,
+                            child: CircularProgressIndicator(),
+                          ),
+                        ),
+                      ),
+                      errorWidget: (context, url, error) => Icon(Icons.error),
+                    )
+                  : SizedBox(height: 10),
               Positioned(
                 top: 30,
                 left: 30,
@@ -145,7 +148,7 @@ class _ReportCardState extends State<ReportCard> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text("Petugas",
+                          Text("${AppTranslations.of(context).text("officer")}",
                               style:
                                   TextStyle(color: Colors.white, fontSize: 13)),
                           Text("Azerino Gatots",
@@ -190,7 +193,7 @@ class _ReportCardState extends State<ReportCard> {
               ),
               SizedBox(width: 7),
               Text(
-                "Lihat Semua Laporan",
+                "${AppTranslations.of(context).text("btn_report")}",
                 style: TextStyle(fontWeight: FontWeight.w500),
               ),
             ],

@@ -1,3 +1,4 @@
+import 'package:ayotrash/localization/app_translations.dart';
 import 'package:flutter/material.dart';
 
 class SubscribeCard extends StatefulWidget {
@@ -47,7 +48,7 @@ class _SubscribeCardState extends State<SubscribeCard> {
                     SizedBox(width: 10),
                     Flexible(
                       child: Text(
-                        "Sampah dirumah kamu sudah mulai menumpuk tuh.",
+                        "${AppTranslations.of(context).text("not_premium_title")}.",
                         style: TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 16),
                       ),
@@ -74,7 +75,7 @@ class _SubscribeCardState extends State<SubscribeCard> {
                           child: Image.asset("assets/lightning.png"),
                         ),
                         Text(
-                          "Berlangganan ",
+                          "${AppTranslations.of(context).text("btn_subscribe")} ",
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 16,
@@ -96,13 +97,13 @@ class _SubscribeCardState extends State<SubscribeCard> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      "*Bayar sekarang, gratis ",
+                      "*${AppTranslations.of(context).text("note_subscribe_part1")} ",
                       style: TextStyle(
                         fontSize: 14,
                       ),
                     ),
                     Text(
-                      "3 bulan",
+                      "${AppTranslations.of(context).text("note_subscribe_part2")}",
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 14,

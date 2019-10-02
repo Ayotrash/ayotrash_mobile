@@ -1,3 +1,4 @@
+import 'package:ayotrash/localization/app_translations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import './profile_view_model.dart';
@@ -33,7 +34,7 @@ class ProfileView extends ProfileViewModel {
                     Icon(Icons.settings),
                     SizedBox(width: 5),
                     Text(
-                      "Pengaturan",
+                      "${AppTranslations.of(context).text("setting")}",
                       style: TextStyle(
                         fontWeight: FontWeight.w900,
                         fontSize: 18,
@@ -108,7 +109,7 @@ class ProfileView extends ProfileViewModel {
                 ),
                 SizedBox(width: 5),
                 Text(
-                  "20 points",
+                  "20 ${AppTranslations.of(context).text("point")}",
                   style: TextStyle(
                     fontWeight: FontWeight.w900,
                     fontSize: 20,
@@ -158,7 +159,7 @@ class ProfileView extends ProfileViewModel {
                                 ),
                                 SizedBox(width: 6),
                                 Text(
-                                  "Alamat Kamu",
+                                  "${AppTranslations.of(context).text("your_address")}",
                                   style: TextStyle(
                                       fontWeight: FontWeight.w700,
                                       fontSize: 16),
@@ -177,7 +178,8 @@ class ProfileView extends ProfileViewModel {
                                     size: 22,
                                   ),
                                   SizedBox(width: 5),
-                                  Text("Ubah Alamat")
+                                  Text(
+                                      "${AppTranslations.of(context).text("change_address")}")
                                 ],
                               ),
                             )
@@ -203,7 +205,6 @@ class ProfileView extends ProfileViewModel {
                           children: <Widget>[
                             Row(
                               mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 !subscribe
                                     ? Icon(Icons.info)
@@ -226,19 +227,19 @@ class ProfileView extends ProfileViewModel {
                                     children: <Widget>[
                                       !subscribe
                                           ? Text(
-                                              "Belum berlangganan",
+                                              "${AppTranslations.of(context).text("not_subscribe")}",
                                               style: TextStyle(
                                                   fontWeight: FontWeight.w500),
                                             )
                                           : Text(
-                                              "Sudah berlangganan",
+                                              "${AppTranslations.of(context).text("is_subscribe")}",
                                               style: TextStyle(
                                                   fontWeight: FontWeight.w500,
                                                   color: Color(0xFF2ed573)),
                                             ),
                                       subscribe
                                           ? Text(
-                                              "Berakhir pada 21 Aug 2019",
+                                              "${AppTranslations.of(context).text("is_over")} 21 Aug 2019",
                                               style: TextStyle(
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.w500,
@@ -269,7 +270,7 @@ class ProfileView extends ProfileViewModel {
                                         ),
                                         SizedBox(width: 3),
                                         Text(
-                                          "Tambah Langganan",
+                                          "${AppTranslations.of(context).text("add_subscribe")}",
                                           style: TextStyle(
                                             fontWeight: FontWeight.w500,
                                             fontSize: 14,
@@ -301,7 +302,7 @@ class ProfileView extends ProfileViewModel {
                                         ),
                                         SizedBox(width: 5),
                                         Text(
-                                          "Lihat Semua Laporan",
+                                          "${AppTranslations.of(context).text("btn_report")}",
                                           style: TextStyle(
                                               fontSize: 12,
                                               fontWeight: FontWeight.w500),
@@ -332,7 +333,7 @@ class ProfileView extends ProfileViewModel {
                     Icon(Icons.add, size: 20),
                     SizedBox(width: 5),
                     Text(
-                      "Tambah Tempat / Rumah",
+                      "${AppTranslations.of(context).text("btn_add_new_address")}",
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 15,
@@ -350,7 +351,7 @@ class ProfileView extends ProfileViewModel {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    "Akun",
+                    "${AppTranslations.of(context).text("account_title")}",
                     style: TextStyle(
                       fontWeight: FontWeight.w900,
                       fontSize: 18,
@@ -359,7 +360,8 @@ class ProfileView extends ProfileViewModel {
                   SizedBox(height: 15),
                   RichText(
                     text: new TextSpan(
-                      text: 'Alamat email',
+                      text:
+                          '${AppTranslations.of(context).text("email_address")}',
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 15,
@@ -367,7 +369,8 @@ class ProfileView extends ProfileViewModel {
                       children: [
                         new TextSpan(text: ' - '),
                         new TextSpan(
-                            text: 'Terverifikasi',
+                            text:
+                                '${AppTranslations.of(context).text("verified")}',
                             style: new TextStyle(
                                 fontWeight: FontWeight.w500,
                                 color: Color(0xFF1e90ff))),
@@ -393,7 +396,8 @@ class ProfileView extends ProfileViewModel {
                   SizedBox(height: 15),
                   RichText(
                     text: new TextSpan(
-                      text: 'No. Handphone',
+                      text:
+                          '${AppTranslations.of(context).text("number_phone")}',
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 15,
@@ -401,7 +405,8 @@ class ProfileView extends ProfileViewModel {
                       children: [
                         new TextSpan(text: ' - '),
                         new TextSpan(
-                            text: 'Terverifikasi',
+                            text:
+                                '${AppTranslations.of(context).text("verified")}',
                             style: new TextStyle(
                                 fontWeight: FontWeight.w500,
                                 color: Color(0xFF1e90ff))),
@@ -425,7 +430,7 @@ class ProfileView extends ProfileViewModel {
                     ],
                   ),
                   SizedBox(height: 15),
-                  Text("Password",
+                  Text("${AppTranslations.of(context).text("password")}",
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 15,
@@ -466,7 +471,7 @@ class ProfileView extends ProfileViewModel {
                     Icon(Icons.headset_mic, size: 20),
                     SizedBox(width: 5),
                     Text(
-                      "Butuh bantuan?",
+                      "${AppTranslations.of(context).text("btn_help")}",
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 16,

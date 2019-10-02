@@ -1,3 +1,4 @@
+import 'package:ayotrash/localization/app_translations.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -118,7 +119,7 @@ class GamesCard extends StatelessWidget {
                               color: Color(0xFFFE9923)),
                         ),
                         Text(
-                          "points",
+                          "${AppTranslations.of(context).text("point")}",
                           style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 16,
@@ -147,7 +148,7 @@ class GamesCard extends StatelessWidget {
                     ),
                     SizedBox(width: 7),
                     Text(
-                      "Play",
+                      "${AppTranslations.of(context).text("play")}",
                       style: TextStyle(fontWeight: FontWeight.w500),
                     ),
                   ],

@@ -1,3 +1,4 @@
+import 'package:ayotrash/localization/app_translations.dart';
 import 'package:ayotrash/screens/reward/widgets/games_card.dart';
 import 'package:ayotrash/screens/reward/widgets/withdraw_card.dart';
 import 'package:flutter/material.dart';
@@ -99,7 +100,7 @@ class RewardView extends RewardViewModel {
                                             ),
                                             SizedBox(width: 5),
                                             Text(
-                                              "20 points",
+                                              "20 ${AppTranslations.of(context).text("point")}",
                                               style: TextStyle(
                                                   fontWeight: FontWeight.w900,
                                                   fontSize: 22,
@@ -108,7 +109,7 @@ class RewardView extends RewardViewModel {
                                           ]),
                                           SizedBox(height: 3),
                                           Text(
-                                            "Point berlaku hingga 20 Sept 2020",
+                                            "${AppTranslations.of(context).text("expired_points")} 2020",
                                             style: TextStyle(
                                                 color: Color(0xFF2f3542)),
                                           ),
@@ -140,7 +141,7 @@ class RewardView extends RewardViewModel {
                                           ),
                                           SizedBox(width: 7),
                                           Text(
-                                            "History pemakaian points",
+                                            "${AppTranslations.of(context).text("btn_history")}",
                                             style: TextStyle(
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -165,7 +166,7 @@ class RewardView extends RewardViewModel {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    "Quiz & Challenge",
+                    "${AppTranslations.of(context).text("quiz_challenge_title")}",
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 20,
@@ -173,7 +174,7 @@ class RewardView extends RewardViewModel {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    "Kumpulkan point lebih banyak dengan mengikuti kuis dan tantangan dari kami.",
+                    "${AppTranslations.of(context).text("quiz_challenge_subtitle")}.",
                     style: TextStyle(
                       fontSize: 14,
                     ),
@@ -182,7 +183,7 @@ class RewardView extends RewardViewModel {
               ),
             ),
             Container(
-                height: 280,
+                height: 300,
                 child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
@@ -205,7 +206,6 @@ class RewardView extends RewardViewModel {
                             "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZCAvoEG7cCTMe76qCphzzhnQwX9ByCAb2578HvXFOYYnCiNEL",
                       ),
                     ])),
-            SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Column(
@@ -213,7 +213,7 @@ class RewardView extends RewardViewModel {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    "Tukarkan points",
+                    "${AppTranslations.of(context).text("exchange_point_title")}",
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 20,
@@ -221,7 +221,7 @@ class RewardView extends RewardViewModel {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    "Tukarkan point yang anda miliki disini.",
+                    "${AppTranslations.of(context).text("exchange_point_subtitle")}.",
                     style: TextStyle(
                       fontSize: 14,
                     ),

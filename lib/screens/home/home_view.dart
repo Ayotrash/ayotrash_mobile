@@ -1,3 +1,4 @@
+import 'package:ayotrash/localization/app_translations.dart';
 import 'package:ayotrash/screens/home/widgets/feeds_card.dart';
 import 'package:ayotrash/screens/home/widgets/report_card.dart';
 import 'package:ayotrash/screens/home/widgets/subscribe_card.dart';
@@ -37,7 +38,7 @@ class HomeView extends HomeViewModel {
                     ),
                     SizedBox(width: 10),
                     Text(
-                      "Hi, Arsyad",
+                      "${AppTranslations.of(context).text("title_home")}, Arsyad",
                       style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 20,
@@ -62,7 +63,7 @@ class HomeView extends HomeViewModel {
                       ),
                       SizedBox(width: 5),
                       Text(
-                        "20 points",
+                        "20 ${AppTranslations.of(context).text("point")}",
                         style: TextStyle(
                           fontWeight: FontWeight.w900,
                           fontSize: 18,
@@ -87,7 +88,7 @@ class HomeView extends HomeViewModel {
                 child: Row(
                   children: <Widget>[
                     Text(
-                      "Tentang ",
+                      "${AppTranslations.of(context).text("about_title")} ",
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 20,
@@ -134,7 +135,7 @@ class HomeView extends HomeViewModel {
                                           MainAxisAlignment.start,
                                       children: <Widget>[
                                         Text(
-                                          "Apa itu ",
+                                          "${AppTranslations.of(context).text("what_is")} ",
                                           style: TextStyle(
                                             fontWeight: FontWeight.w500,
                                             fontSize: 20,
@@ -158,7 +159,7 @@ class HomeView extends HomeViewModel {
                                     Flexible(
                                         child: RichText(
                                       text: new TextSpan(
-                                        text: 'Cari tau lebih banyak tentang',
+                                        text: '${AppTranslations.of(context).text("ayotrash_subtitle_part1")}',
                                         style: TextStyle(
                                             fontSize: 15,
                                             color: Color(0xFF2f3542)),
@@ -169,7 +170,7 @@ class HomeView extends HomeViewModel {
                                                   fontWeight: FontWeight.bold)),
                                           new TextSpan(
                                               text:
-                                                  '. Dan apa yang bisa kalian ubah bersama kami.'),
+                                                  '. ${AppTranslations.of(context).text("ayotrash_subtitle_part2")}.'),
                                         ],
                                       ),
                                     )),
@@ -208,7 +209,7 @@ class HomeView extends HomeViewModel {
                                           MainAxisAlignment.start,
                                       children: <Widget>[
                                         Text(
-                                          "Apa itu ",
+                                          "${AppTranslations.of(context).text("what_is")} ",
                                           style: TextStyle(
                                             fontWeight: FontWeight.w500,
                                             fontSize: 20,
@@ -232,7 +233,7 @@ class HomeView extends HomeViewModel {
                                     Flexible(
                                         child: RichText(
                                       text: new TextSpan(
-                                        text: 'Cari tau lebih banyak tentang',
+                                        text: '${AppTranslations.of(context).text("ayopoint_subtitle_part1")}',
                                         style: TextStyle(
                                             fontSize: 15,
                                             color: Color(0xFF2f3542)),
@@ -243,7 +244,7 @@ class HomeView extends HomeViewModel {
                                                   fontWeight: FontWeight.bold)),
                                           new TextSpan(
                                               text:
-                                                  '. Dan apa yang bisa kalian ubah bersama kami.'),
+                                                  '. ${AppTranslations.of(context).text("ayotrash_subtitle_part2")}.'),
                                         ],
                                       ),
                                     )),
@@ -260,7 +261,7 @@ class HomeView extends HomeViewModel {
                 padding:
                     EdgeInsets.only(top: 30, left: 15, right: 25, bottom: 12),
                 child: Text(
-                  "Blog & Feeds",
+                  "${AppTranslations.of(context).text("blog_feed_title")}",
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 20,

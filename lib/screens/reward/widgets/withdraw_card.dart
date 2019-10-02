@@ -1,3 +1,4 @@
+import 'package:ayotrash/localization/app_translations.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -99,7 +100,7 @@ class WithdrawCard extends StatelessWidget {
                             color: Color(0xFFFE9923)),
                       ),
                       Text(
-                        "points",
+                        "${AppTranslations.of(context).text("point")}",
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 16,
