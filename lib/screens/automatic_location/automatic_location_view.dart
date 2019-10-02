@@ -1,3 +1,4 @@
+import 'package:ayotrash/localization/app_translations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -122,7 +123,7 @@ class AutomaticLocationView extends AutomaticLocationViewModel {
                               SizedBox(width: 10),
                               Flexible(
                                 child: Text(
-                                  "Selamat, lokasimu masuk ke dalam area cakupan kami.",
+                                  "${AppTranslations.of(context).text("title_auto_loc")}",
                                   style: TextStyle(
                                       color: Color(0xFF2f3542),
                                       fontSize: 16,
@@ -159,7 +160,8 @@ class AutomaticLocationView extends AutomaticLocationViewModel {
                                     color: Color(0xFF9D9D9D),
                                     size: 25,
                                   ),
-                                  hintText: "Alamat lengkap",
+                                  hintText:
+                                      "${AppTranslations.of(context).text("text_field_address")}",
                                   hintStyle: TextStyle(
                                     fontSize: 14,
                                     color: Color(0xFF9D9D9D),
@@ -174,7 +176,8 @@ class AutomaticLocationView extends AutomaticLocationViewModel {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: <Widget>[
                             SizedBox(width: 30),
-                            Text("Street / Building / Place")
+                            Text(
+                                "${AppTranslations.of(context).text("sub_address")}")
                           ],
                         ),
                         Padding(
@@ -201,7 +204,8 @@ class AutomaticLocationView extends AutomaticLocationViewModel {
                                     color: Color(0xFF9D9D9D),
                                     size: 25,
                                   ),
-                                  hintText: "Detail lokasi",
+                                  hintText:
+                                      "${AppTranslations.of(context).text("text_field_detail")}",
                                   hintStyle: TextStyle(
                                     fontSize: 14,
                                     color: Color(0xFF9D9D9D),
@@ -215,7 +219,8 @@ class AutomaticLocationView extends AutomaticLocationViewModel {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: <Widget>[
                             SizedBox(width: 30),
-                            Text("House no. / Floor / Landmark")
+                            Text(
+                                "${AppTranslations.of(context).text("sub_detail")}")
                           ],
                         ),
                         SizedBox(height: 25),
@@ -232,7 +237,7 @@ class AutomaticLocationView extends AutomaticLocationViewModel {
                               color: Color(0xFF2ed573),
                               textColor: Colors.white,
                               child: Text(
-                                "Lanjutkan",
+                                "${AppTranslations.of(context).text("btn_next")}",
                                 style: TextStyle(
                                   fontWeight: FontWeight.w700,
                                   fontSize: 16,
@@ -252,7 +257,7 @@ class AutomaticLocationView extends AutomaticLocationViewModel {
                               onPressed: () {},
                               textColor: Color(0xFF1e90ff),
                               child: Text(
-                                "Butuh bantuan?",
+                                "${AppTranslations.of(context).text("btn_help")}",
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 16,
