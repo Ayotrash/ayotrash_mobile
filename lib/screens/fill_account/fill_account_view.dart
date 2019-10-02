@@ -1,3 +1,4 @@
+import 'package:ayotrash/localization/app_translations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import './fill_account_view_model.dart';
@@ -55,7 +56,7 @@ class FillAccountView extends FillAccountViewModel {
                               ),
                               SizedBox(width: 6),
                               Text(
-                                "Alamat Kamu",
+                                "${AppTranslations.of(context).text("your_address")}",
                                 style: TextStyle(
                                     fontWeight: FontWeight.w700, fontSize: 16),
                               ),
@@ -73,7 +74,9 @@ class FillAccountView extends FillAccountViewModel {
                                   size: 22,
                                 ),
                                 SizedBox(width: 5),
-                                Text("Ubah Alamat")
+                                Text(
+                                  "${AppTranslations.of(context).text("change_address")}",
+                                )
                               ],
                             ),
                           )
@@ -115,7 +118,7 @@ class FillAccountView extends FillAccountViewModel {
           SizedBox(height: 15),
           Center(
             child: Text(
-              "Unggah Foto",
+              "${AppTranslations.of(context).text("upload_photo")}",
               style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 16,
@@ -135,7 +138,7 @@ class FillAccountView extends FillAccountViewModel {
                   color: Color(0xFF2F3542),
                   fontWeight: FontWeight.w500,
                 ),
-                // controller: controller,
+                controller: firstnameController,
                 decoration: InputDecoration(
                   fillColor: Color(0xFFced6e0),
                   icon: Icon(
@@ -143,7 +146,7 @@ class FillAccountView extends FillAccountViewModel {
                     color: Color(0xFF9D9D9D),
                     size: 25,
                   ),
-                  hintText: "Nama Depan",
+                  hintText: "${AppTranslations.of(context).text("firstname")}",
                   hintStyle: TextStyle(
                     fontSize: 14,
                     color: Color(0xFF9D9D9D),
@@ -165,7 +168,7 @@ class FillAccountView extends FillAccountViewModel {
                   color: Color(0xFF2F3542),
                   fontWeight: FontWeight.w500,
                 ),
-                // controller: controller,
+                controller: lastnameController,
                 decoration: InputDecoration(
                   fillColor: Color(0xFFced6e0),
                   icon: Icon(
@@ -173,7 +176,7 @@ class FillAccountView extends FillAccountViewModel {
                     color: Color(0xFF9D9D9D),
                     size: 25,
                   ),
-                  hintText: "Nama Belakang",
+                  hintText: "${AppTranslations.of(context).text("lastname")}",
                   hintStyle: TextStyle(
                     fontSize: 14,
                     color: Color(0xFF9D9D9D),
@@ -195,7 +198,8 @@ class FillAccountView extends FillAccountViewModel {
                   color: Color(0xFF2F3542),
                   fontWeight: FontWeight.w500,
                 ),
-                // controller: controller,
+                keyboardType: TextInputType.emailAddress,
+                controller: emailController,
                 decoration: InputDecoration(
                   fillColor: Color(0xFFced6e0),
                   icon: Icon(
@@ -203,7 +207,7 @@ class FillAccountView extends FillAccountViewModel {
                     color: Color(0xFF9D9D9D),
                     size: 25,
                   ),
-                  hintText: "Email",
+                  hintText: "${AppTranslations.of(context).text("email")}",
                   hintStyle: TextStyle(
                     fontSize: 14,
                     color: Color(0xFF9D9D9D),
@@ -225,7 +229,8 @@ class FillAccountView extends FillAccountViewModel {
                   color: Color(0xFF2F3542),
                   fontWeight: FontWeight.w500,
                 ),
-                // controller: controller,
+                controller: numberphoneController,
+                keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   fillColor: Color(0xFFced6e0),
                   icon: Icon(
@@ -233,7 +238,8 @@ class FillAccountView extends FillAccountViewModel {
                     color: Color(0xFF9D9D9D),
                     size: 25,
                   ),
-                  hintText: "No Handphone",
+                  hintText:
+                      "${AppTranslations.of(context).text("number_phone")}",
                   hintStyle: TextStyle(
                     fontSize: 14,
                     color: Color(0xFF9D9D9D),
@@ -255,7 +261,8 @@ class FillAccountView extends FillAccountViewModel {
                   color: Color(0xFF2F3542),
                   fontWeight: FontWeight.w500,
                 ),
-                // controller: controller,
+                obscureText: true,
+                controller: passwordController,
                 decoration: InputDecoration(
                   fillColor: Color(0xFFced6e0),
                   icon: Icon(
@@ -263,7 +270,7 @@ class FillAccountView extends FillAccountViewModel {
                     color: Color(0xFF9D9D9D),
                     size: 25,
                   ),
-                  hintText: "Password",
+                  hintText: "${AppTranslations.of(context).text("password")}",
                   hintStyle: TextStyle(
                     fontSize: 14,
                     color: Color(0xFF9D9D9D),
@@ -285,7 +292,8 @@ class FillAccountView extends FillAccountViewModel {
                   color: Color(0xFF2F3542),
                   fontWeight: FontWeight.w500,
                 ),
-                // controller: controller,
+                obscureText: true,
+                controller: confirmPasswordController,
                 decoration: InputDecoration(
                   fillColor: Color(0xFFced6e0),
                   icon: Icon(
@@ -293,7 +301,8 @@ class FillAccountView extends FillAccountViewModel {
                     color: Color(0xFF9D9D9D),
                     size: 25,
                   ),
-                  hintText: "Ulang Password",
+                  hintText:
+                      "${AppTranslations.of(context).text("confirm_password")}",
                   hintStyle: TextStyle(
                     fontSize: 14,
                     color: Color(0xFF9D9D9D),
@@ -317,13 +326,17 @@ class FillAccountView extends FillAccountViewModel {
               Flexible(
                   child: RichText(
                 text: new TextSpan(
-                  text: 'Anda bersedia menerima',
+                  text:
+                      '${AppTranslations.of(context).text("text_terms_condition_part1")}',
                   style: TextStyle(fontSize: 13, color: Color(0xFF2f3542)),
                   children: <TextSpan>[
                     new TextSpan(
-                        text: ' syarat dan ketentuan ',
+                        text:
+                            ' ${AppTranslations.of(context).text("text_terms_condition_part2")} ',
                         style: new TextStyle(fontWeight: FontWeight.bold)),
-                    new TextSpan(text: 'dari kami.'),
+                    new TextSpan(
+                        text:
+                            '${AppTranslations.of(context).text("text_terms_condition_part3")}.'),
                   ],
                 ),
               )),
