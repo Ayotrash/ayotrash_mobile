@@ -3,6 +3,10 @@ import 'package:ayotrash/screens/sign/sign.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+// import 'package:devicelocale/devicelocale.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:ayotrash/localization/app_translations_delegate.dart';
+import 'package:ayotrash/localization/application.dart';
 import 'package:google_map_location_picker/generated/i18n.dart'
     as location_picker;
 
@@ -11,41 +15,27 @@ Future main() async {
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]);
-
   // Store<AppState> _store = await createStore();
-  // DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-  // AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-  // print(androidInfo.version.baseOS);
-  // print(androidInfo.version.codename);
-  // print(androidInfo.version.incremental);
-  // print(androidInfo.version.previewSdkInt);
-  // print(androidInfo.version.release);
-  // print(androidInfo.version.sdkInt);
-  // print(androidInfo.version.securityPatch);
-  // print(androidInfo.bootloader);
-  // print(androidInfo.brand);
-  // print(androidInfo.device);
-  // print(androidInfo.display);
-  // print(androidInfo.fingerprint);
-  // print(androidInfo.board);
-  // print(androidInfo.hardware);
-  // print(androidInfo.host);
-  // print(androidInfo.id);
-  // print(androidInfo.manufacturer);
-  // print(androidInfo.model);
-  // print(androidInfo.product);
-  // print(androidInfo.supported32BitAbis);
-  // print(androidInfo.supported64BitAbis);
-  // print(androidInfo.supportedAbis);
-  // print(androidInfo.tags);
-  // print(androidInfo.type);
-  // print(androidInfo.isPhysicalDevice);
-  // print(androidInfo.androidId);
 
   runApp(MainApp());
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
+  @override
+  _MainAppState createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+  AppTranslationsDelegate _newLocaleDelegate;
+
+  @override
+  void initState() {
+    super.initState();
+    _newLocaleDelegate = AppTranslationsDelegate(newLocale: null);
+    application.onLocaleChanged = onLocaleChange;
+    // getLocate();
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -63,15 +53,29 @@ class MainApp extends StatelessWidget {
           color: Color(0xFF2F3542),
         ),
       ),
-      localizationsDelegates: const [
+      localizationsDelegates: [
+        _newLocaleDelegate,
         location_picker.S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
       ],
-      supportedLocales: const <Locale>[
-        Locale('en', ''),
-        Locale('id', ''),
+      supportedLocales: <Locale>[
+        const Locale('en', ''),
+        const Locale('id', ''),
       ],
       home: Sign(),
       routes: routes,
     );
   }
+
+  void onLocaleChange(Locale locale) {
+    setState(() {
+      _newLocaleDelegate = AppTranslationsDelegate(newLocale: locale);
+    });
+  }
+
+  // Future getLocate() async {
+  //   List _languages = await Devicelocale.preferredLanguages;
+  //   _newLocaleDelegate = AppTranslationsDelegate(newLocale: Locale('id'));
+  // }
 }
