@@ -1,3 +1,4 @@
+import 'package:ayotrash/localization/app_translations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import './check_location_view_model.dart';
@@ -24,7 +25,7 @@ class CheckLocationView extends CheckLocationViewModel {
             ),
             SizedBox(height: 25),
             Text(
-              "Kita cek lokasi kamu dulu ya",
+              "${AppTranslations.of(context).text("title_check_loc")}",
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
             ),
             SizedBox(height: 35),
@@ -48,7 +49,7 @@ class CheckLocationView extends CheckLocationViewModel {
                     ),
                     SizedBox(width: 10),
                     Text(
-                      "Cek Lokasi Otomatis",
+                      "${AppTranslations.of(context).text("btn_auto_check")}",
                       style:
                           TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
                     ),
@@ -58,7 +59,7 @@ class CheckLocationView extends CheckLocationViewModel {
             ),
             SizedBox(height: 15),
             Text(
-              "atau",
+              "${AppTranslations.of(context).text("or")}",
               style: TextStyle(fontSize: 16),
             ),
             SizedBox(height: 15),
@@ -71,7 +72,7 @@ class CheckLocationView extends CheckLocationViewModel {
                 onPressed: () => checkManually(),
                 textColor: Color(0xFF1e90ff),
                 child: Text(
-                  "Tambahkan lokasi secara manual",
+                  "${AppTranslations.of(context).text("btn_manual_check")}",
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
