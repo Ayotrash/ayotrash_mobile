@@ -170,7 +170,7 @@ class ReportView extends ReportViewModel {
                                       color: Color(0xFF2f3542)),
                                 )
                               : Text(
-                                  "${AppTranslations.of(context).text("tash_taken")} 08:19",
+                                  "${AppTranslations.of(context).text("trash_taken")} 08:19",
                                   style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500,
@@ -259,7 +259,8 @@ class ReportView extends ReportViewModel {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text("${AppTranslations.of(context).text("officer")}",
+                                Text(
+                                    "${AppTranslations.of(context).text("officer")}",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 13)),
                                 Text("Azerino Gatots",

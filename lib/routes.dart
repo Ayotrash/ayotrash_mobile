@@ -4,6 +4,7 @@ import 'package:ayotrash/screens/fill_account/fill_account.dart';
 import 'package:ayotrash/screens/profile/profile.dart';
 import 'package:ayotrash/screens/report/report.dart';
 import 'package:ayotrash/screens/reward/reward.dart';
+import 'package:ayotrash/screens/settings/settings.dart';
 import 'package:ayotrash/screens/sign/sign.dart';
 import 'package:flutter/material.dart';
 import 'package:ayotrash/screens/home/home.dart';
@@ -17,4 +18,5 @@ final Map<String, WidgetBuilder> routes = {
   '/FillAccount': (BuildContext context) => FillAccount(),
   '/Report': (BuildContext context) => Report(),
   '/Reward': (BuildContext context) => Reward(),
+  '/Settings': (BuildContext context) => Settings(),
 };

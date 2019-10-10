@@ -27,7 +27,7 @@ class ProfileView extends ProfileViewModel {
                 padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),
-                onPressed: () {},
+                onPressed: () => Navigator.pushNamed(context, "/Settings"),
                 textColor: Color(0xFF2f3542),
                 child: Row(
                   children: <Widget>[
